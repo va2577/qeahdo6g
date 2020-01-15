@@ -29,6 +29,8 @@
   header > ul {
     align-items: center;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     list-style-type: none;
     margin: 0px;
@@ -53,5 +55,10 @@
     display: inline-block;
     height: 40px;
     width: 40px;
+  }
+  @media screen and (max-width: 992px) {
+    header {
+      width: 640px;
+    }
   }
 </style>
