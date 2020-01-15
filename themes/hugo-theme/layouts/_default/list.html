@@ -1,0 +1,38 @@
+{{ define "main" }}
+  <main>
+    <h1>{{ .Title | upper | replaceRE "POSTS" "BLOG" }}</h1>
+    {{ partial "ads.html" . }}
+    <ul>
+      {{ range .Pages }}
+      <li>
+        <a href="{{ .Permalink }}">
+          <article>
+            <div><time>{{ .Date.Format "January 2, 2006" }}</time></div>
+            {{ .Title }}
+          </article>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ partial "ads.html" . }}
+  </main>
+  <style>
+    ul {
+      list-style: none;
+    }
+    li {
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+    a {
+      color: #2f495e;
+    }
+    ul {
+      list-style: none;
+    }
+    li {
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+  </style>
+{{ end }}

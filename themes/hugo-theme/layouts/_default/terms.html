@@ -1,0 +1,41 @@
+{{ define "main" }}
+  {{ partial "ads.html" . }}
+  <aside class="terms">
+    <h3>{{ .Title | upper }}</h3>
+    <ul>
+      {{ range .Data.Terms.Alphabetical }}
+        <li>
+          <a href="{{ .Page.Permalink }}">
+            <div>{{ .Page.Title }}</div>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </aside>
+  {{ partial "ads.html" . }}
+  <style>
+    aside.terms {
+      border-top: #e2e8f0 solid 1px;
+    }
+    aside.terms ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+    aside.terms li {
+      flex: auto;
+      padding: 0px;
+    }
+    aside.terms div {
+      border: #e2e8f0 solid 1px;
+      border-radius: .25rem;
+      color: #2f495e;
+      margin-bottom: .5rem;
+      margin-right: .5rem;
+      padding-left: .5rem;
+      padding-right: .5rem;
+      text-align: center;
+    }
+  </style>
+{{ end }}
