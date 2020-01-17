@@ -3,7 +3,7 @@
     <h1>{{ .Title | upper | replaceRE "POSTS" "BLOG" }}</h1>
     {{ partial "ads.html" . }}
     <ul>
-      {{ range .Pages }}
+      {{ range .Paginator.Pages }}
       <li>
         <a href="{{ .Permalink }}">
           <article>
@@ -15,6 +15,9 @@
       {{ end }}
     </ul>
     {{ partial "ads.html" . }}
+    <nav>
+      {{ template "_internal/pagination.html" . }}
+    </nav>
   </main>
   <style>
     main ul {
@@ -26,6 +29,15 @@
     }
     main a {
       color: #2f495e;
+    }
+    main nav ul.pagination {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    main nav li.active a {
+      color: #a0aec0;
     }
   </style>
 {{ end }}
