@@ -1,6 +1,8 @@
-baseURL = "http://example.org/"
+baseURL = "https://va2577.github.io/"
 languageCode = "en-us"
 title = "Espresso & Onigiri"
 
+theme = "hugo-theme"
+
 [markup.goldmark.renderer]
-unsafe= true
+unsafe = true
