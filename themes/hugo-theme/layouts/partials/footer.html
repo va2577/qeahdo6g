@@ -1,10 +1,5 @@
 <footer>
-  <div>&copy; 2015 {{ .Site.Title }}</div>
-  <!--
-  <a href="https://ja.nuxtjs.org">
-    <img alt="BUILT WITH" src="/img/built-with-nuxt.svg" class="built-with-nuxt">
-  </a>
-  -->
+  <small>&copy; 2015 {{ .Site.Title }}</small>
   <a href="https://gohugo.io">
     <img alt="Hugo" src="/img/hugo-logo-wide.svg">
   </a>
@@ -21,13 +16,24 @@
     margin: 0px auto;
     width: 992px;
   }
+  footer small {
+    height: 40px;
+    line-height: 40px;
+  }
   footer img {
     height: 40px;
+    vertical-align: middle;
     width: 160px;
   }
   @media screen and (max-width: 992px) {
     footer {
-      width: 640px;
+      margin-bottom: 54px;
+      padding-left: 1%;
+      padding-right: 1%;
+      width: 98%;
+    }
+    footer img {
+      width: 100px;
     }
   }
 </style>
